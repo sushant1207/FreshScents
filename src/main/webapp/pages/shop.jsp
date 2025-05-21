@@ -10,12 +10,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shop - Perfume Paradise</title>
+    <title>Shop - FreshScents</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/shop.css" />
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">Perfume Paradise</div>
+        <div class="logo">FreshScents</div>
         <div class="nav-links">
             <a href="home.jsp">Home</a>
             <a href="cart.jsp">Cart</a>

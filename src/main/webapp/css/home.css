@@ -1,54 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #fdfdfd;
+    background: #fefefe;
     color: #333;
+    line-height: 1.6;
 }
 
-
-/* Hero */
-.hero {
-    background: url('https://images.theperfumeshop.com/marketing/1681302792852.jpg') no-repeat center center/cover;
-    height: 400px;
-    color: pink;
-    text-align: center;
-    padding-top: 100px;
+/* Navbar */
+.navbar {
+    background-color: #111;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: #333;
+}
+
+/* Hero styles are inlined in home.jsp */
+
+/* Hero text */
 .hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .cta {
-    padding: 12px 30px;
+    padding: 14px 36px;
     background: #e91e63;
     color: white;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: background 0.3s;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
 }
 
 .cta:hover {
     background: #c2185b;
+    transform: scale(1.05);
 }
 
-/* Products */
+/* Products Section */
 .products {
-    padding: 50px 40px;
+    padding: 60px 20px;
     text-align: center;
+    background: #fff8f9;
 }
 
 .products h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #222;
 }
 
 .product-grid {
@@ -60,43 +102,51 @@ body {
 
 .product-card {
     background: #fff;
-    border: 1px solid #ddd;
+    border: none;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 16px;
     width: 280px;
-    transition: box-shadow 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 .product-card h3 {
-    margin: 10px 0 5px;
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #1f3a93;
 }
 
 .product-card p {
     color: #777;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .product-card button {
     background: #1f3a93;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .product-card button:hover {
     background: #162d6a;
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -104,39 +154,40 @@ body {
     background: #111;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-.navbar {
-    background-color: #111;
-    padding: 16px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+    padding: 24px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-top: 60px;
 }
 
-.logo a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 22px;
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 14px;
-    transition: 0.3s;
-}
+    .products h2 {
+        font-size: 28px;
+    }
 
-.nav-links a:hover {
-    background: #333;
-    border-radius: 5px;
+    .product-card {
+        width: 90%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -36,6 +36,7 @@ public class LoginController extends HttpServlet {
                 session.setAttribute("userID", rs.getInt("UserID"));
                 session.setAttribute("userName", rs.getString("Name"));
                 session.setAttribute("role", rs.getString("Role"));
+                session.setAttribute("profileImage",rs.getString("ProfileImage"));
 
                 String role = rs.getString("Role");
                 if ("admin".equalsIgnoreCase(role)) {

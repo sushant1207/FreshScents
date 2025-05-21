@@ -1,6 +1,6 @@
 package controller;
 
-import DAO.PerfumeDao;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,16 +21,7 @@ public class HomeController extends HttpServlet {
             return;
         }
 
-        // Fetch the perfumes list from the DAO
-        PerfumeDao perfumeDao = new PerfumeDao();
-        List<Perfume> perfumes = perfumeDao.getAllPerfumes(); // Fetch all perfumes
-        
-        // Log the fetched perfumes for debugging
-        System.out.println(perfumes);  // You can remove this in production
-        
-        // Set the list of perfumes in the request
-        request.setAttribute("featuredPerfumes", perfumes);
-
+      
         // Forward the request to the home.jsp page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/home.jsp");
         dispatcher.forward(request, response);
